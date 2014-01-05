@@ -1,0 +1,160 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.sn.mycircle</groupId>
+  <artifactId>mycircle_core</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>mycircle_core</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <org.springframework.version>3.0.5.RELEASE</org.springframework.version>
+      <hibernate.version>3.6.3.Final</hibernate.version>
+      <javassist.version>3.12.1.GA</javassist.version>
+  </properties>
+  
+  <profiles>
+      <profile>
+          <id>development</id>
+          <properties>
+              <db.driver>com.mysql.jdbc.Driver</db.driver>
+              <db.url>jdbc:mysql://localhost:3306/mycircle</db.url>
+              <db.username>root</db.username>
+              <db.password>0000</db.password>
+          </properties>
+      </profile>
+      <profile>
+          <id>integration</id>
+          <properties>
+              <db.driver>com.mysql.jdbc.Driver</db.driver>
+              <db.url>jdbc:mysql://localhost:3306/mycircle</db.url>
+              <db.username>root</db.username>
+              <db.password>0000</db.password>
+          </properties>
+      </profile>
+      <profile>
+          <id>production</id>
+          <properties>
+              <db.driver>com.mysql.jdbc.Driver</db.driver>
+              <db.url>jdbc:mysql://serverIP:3306/mycircle</db.url>
+              <db.username>root</db.username>
+              <db.password>0000</db.password>
+          </properties>
+      </profile>
+  </profiles>
+  
+  <dependencies>
+      <!-- junit -->
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.8.2</version>
+          <scope>test</scope>
+      </dependency>
+      
+      <!-- Spring -->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-test</artifactId>
+          <version>${org.springframework.version}</version>
+          <scope>test</scope>
+      </dependency>
+      
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-core</artifactId>
+          <version>${org.springframework.version}</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-beans</artifactId>
+          <version>${org.springframework.version}</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-aop</artifactId>
+          <version>${org.springframework.version}</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-tx</artifactId>
+          <version>${org.springframework.version}</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context</artifactId>
+          <version>${org.springframework.version}</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-orm</artifactId>
+          <version>${org.springframework.version}</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-aspects</artifactId>
+          <version>${org.springframework.version}</version>
+      </dependency>
+      
+      <!-- Hibernate -->
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-entitymanager</artifactId>
+          <version>${hibernate.version}</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>javassist</groupId>
+          <artifactId>javassist</artifactId>
+          <version>${javassist.version}</version>
+      </dependency>
+      
+      <!-- Others -->
+      
+      
+      <dependency>
+          <groupId>org.aspectj</groupId>
+          <artifactId>aspectjrt</artifactId>
+          <version>1.6.11</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>net.sf.ehcache</groupId>
+          <artifactId>ehcache</artifactId>
+          <version>1.6.2</version>
+      </dependency>
+      
+      <!-- Database connector -->
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>5.1.17</version>
+      </dependency>
+      <!-- Data source -->
+      <dependency>
+          <groupId>commons-dbcp</groupId>
+          <artifactId>commons-dbcp</artifactId>
+          <version>1.4</version>
+      </dependency>
+      
+      <!-- Logging -->
+      <dependency>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+          <version>1.2.14</version>
+      </dependency>
+     
+      
+  </dependencies>
+
+</project>
